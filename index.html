@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pair Code System</title>
+</head>
+<body>
+  <h3>Enter Phone Number:</h3>
+  <input id="phone" placeholder="+9477XXXXXXX" />
+  <button onclick="getCode()">Get Code</button>
+  <p id="code"></p>
+
+  <script>
+    async function getCode() {
+      const phone = document.getElementById('phone').value;
+      const res = await fetch('/get-code', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ phone })
+      });
+      const data = await res.json();
+      document.getElementById('code').innerText = data.pairCode || data.error;
+    }
+  </script>
+</body>
+</html>
