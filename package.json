@@ -1,0 +1,12 @@
+{
+  "name": "pair-code-system",
+  "version": "1.0.0",
+  "description": "Simple pair code generator and verifier",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
